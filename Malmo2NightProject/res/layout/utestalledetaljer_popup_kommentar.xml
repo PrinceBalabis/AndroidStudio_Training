@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <EditText
+            android:id="@+id/utestalle_kommentar_titel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="40"
+            android:hint="Titel"
+            android:imeOptions="actionDone"
+            android:maxLength="10"
+            android:singleLine="true"
+            android:textSize="18sp">
+
+        <requestFocus/>
+    </EditText>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <EditText
+                android:id="@+id/utestalle_kommentar_text"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:ems="10"
+                android:gravity="top|left"
+                android:hint="Kommentar"
+                android:imeOptions="actionDone"
+                android:inputType="textMultiLine"
+                android:maxLength="300"
+                android:scrollHorizontally="false"
+                android:textSize="14sp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+
+        <Button
+                android:id="@+id/utestalle_kommentar_avbryt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="26dp"
+                android:text="Avbryt"/>
+
+        <Button
+                android:id="@+id/utestalle_kommentar_skicka"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="28dp"
+                android:text="Skicka kommentar"/>
+    </RelativeLayout>
+    e
+
+</LinearLayout>

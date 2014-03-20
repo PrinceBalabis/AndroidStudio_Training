@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:gravity="center"
+              android:orientation="vertical">
+
+    <ListView
+            android:id="@id/android:list"
+            android:layout_width="match_parent"
+            android:layout_height="364dp"
+            android:layout_weight="0.75"
+            android:clickable="true"
+            android:duplicateParentState="true"
+            android:fastScrollEnabled="true"
+            android:focusableInTouchMode="true"
+            android:longClickable="true"
+            android:overScrollMode="always"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollingCache="true"
+            android:smoothScrollbar="true">
+
+    </ListView>
+
+    <Button
+            android:id="@+id/utestalle_kommentar_skriv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:text="Skriv en kommentar"/>
+
+</LinearLayout>

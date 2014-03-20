@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/action_search"
+            android:icon="@drawable/ic_search"
+            android:orderInCategory="100"
+            android:showAsAction="always"
+            android:title="Sökning"/>
+
+    <item
+            android:id="@+id/action_filter"
+            android:icon="@drawable/ic_filter"
+            android:orderInCategory="100"
+            android:showAsAction="always"
+            android:title="Filter"/>
+
+    <item
+            android:id="@+id/action_utestallen_locations"
+            android:icon="@drawable/ic_locations"
+            android:orderInCategory="100"
+            android:showAsAction="always"
+            android:title="Platser"/>
+
+</menu>

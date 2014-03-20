@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+    <EditText
+            android:id="@+id/popup_soktext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"
+            android:ems="10"
+            android:hint="Söktext"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true">
+
+        <requestFocus/>
+    </EditText>
+
+    <Button
+            android:id="@+id/popup_sok"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/popup_soktext"
+            android:layout_below="@+id/popup_soktext"
+            android:text="Sök"
+            android:textAlignment="4"/>
+
+    <Button
+            android:id="@+id/popup_avbryt"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/popup_sok"
+            android:layout_alignBottom="@+id/popup_sok"
+            android:layout_alignLeft="@+id/popup_soktext"
+            android:text="Avbryt"
+            android:textAlignment="4"/>
+
+</RelativeLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal">
+
+    <TextView
+            android:id="@+id/titel_systembolag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <TextView
+            android:id="@+id/adress_systembolag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titel_systembolag"
+            android:layout_marginTop="10dp"/>
+
+    <TextView
+            android:id="@+id/title_telefon_systembolag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/adress_systembolag"
+            android:text="Telefon:"/>
+
+    <TextView
+            android:id="@+id/telefon_systembolag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/adress_systembolag"
+            android:layout_toRightOf="@id/title_telefon_systembolag"/>
+
+    <TextView
+            android:id="@+id/title_distance_systembolag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Avstånd:"/>
+
+    <TextView
+            android:id="@+id/distance_systembolag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/title_distance_systembolag"/>
+
+</RelativeLayout>

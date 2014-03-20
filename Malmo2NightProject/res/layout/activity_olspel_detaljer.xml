@@ -1,0 +1,106 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".OlspelDetaljerActivity">
+
+    <ScrollView
+            android:id="@+id/olspel_scrollview_antal_ANVAND_EJ"
+            android:layout_width="fill_parent"
+            android:layout_height="90dp"
+            android:fadeScrollbars="false"
+            android:padding="5dp">
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/olspel_antal_titel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Minst antal spelare"
+                    android:layout_below="@id/olspel_antal_titel"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="22sp"/>
+
+            <TextView
+                    android:id="@+id/olspel_antal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/olspel_antal_titel"/>
+        </RelativeLayout>
+    </ScrollView>
+
+    <TextView
+            android:id="@+id/blackLine_blingblingbling"
+            android:layout_width="fill_parent"
+            android:layout_height="2px"
+            android:layout_below="@id/olspel_scrollview_antal_ANVAND_EJ"
+            android:background="#000000"/>
+
+    <ScrollView
+            android:id="@+id/olspel_scrollview_regler_ANVAND_EJ"
+            android:layout_width="fill_parent"
+            android:layout_height="90dp"
+            android:fadeScrollbars="false"
+            android:layout_below="@id/olspel_scrollview_antal_ANVAND_EJ"
+            android:padding="5dp">
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/olspel_regler_titel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Krav"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="22sp"/>
+
+            <TextView
+                    android:id="@+id/olspel_regler"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/olspel_regler_titel"/>
+        </RelativeLayout>
+    </ScrollView>
+
+    <TextView
+            android:id="@+id/blackLine_blingbling"
+            android:layout_width="fill_parent"
+            android:layout_height="2px"
+            android:layout_below="@id/olspel_scrollview_regler_ANVAND_EJ"
+            android:background="#000000"/>
+
+    <ScrollView
+            android:id="@+id/olspel_scrollview_instruktionstext_ANVAND_EJ"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/blackLine_blingbling"
+            android:fadeScrollbars="false"
+            android:padding="5dp">
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/olspel_instruktioner_titel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Instruktioner"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="22sp"/>
+
+            <TextView
+                    android:id="@+id/olspel_instruktioner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/olspel_instruktioner_titel"
+                    android:textSize="15sp"/>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

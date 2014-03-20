@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="250dp"
+                android:layout_height="300dp"
+                android:orientation="vertical">
+
+    <TextView
+            android:id="@+id/popupMessage"
+            android:layout_width="500dp"
+            android:layout_height="300dp"
+            android:text="Meddelande"/>
+
+    <Button
+            android:id="@+id/popupDismiss"
+            android:layout_width="150dp"
+            android:text="Ignorera"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/popupMessage"/>
+
+    <Button
+            android:id="@+id/popupFind"
+            android:layout_below="@id/popupMessage"
+            android:layout_toRightOf="@id/popupDismiss"
+            android:text="Utnyttja"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"/>
+
+</RelativeLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+    <ImageView
+            android:id="@+id/utestalle_ikon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_filter"/>
+
+    <TextView
+            android:id="@+id/utestalle_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/utestalle_namn"
+            android:text="address"/>
+
+    <TextView
+            android:id="@+id/utestalle_namn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="namn"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <TextView
+            android:id="@+id/utestalle_gradering"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/utestalle_ikon"
+            android:text="rating"
+            android:textSize="10sp"/>
+
+    <TextView
+            android:id="@+id/utestalle_avstand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/utestalle_address"
+            android:layout_toRightOf="@+id/utestalle_avståndsText"
+            android:text="avstånd"
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+    <TextView
+            android:id="@+id/utestalle_avståndsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/utestalle_address"
+            android:text="Avstånd: "
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+</RelativeLayout>

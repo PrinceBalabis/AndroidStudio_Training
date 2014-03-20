@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/loadingscreen_name"
+            android:layout_below="@+id/loadingscreen_name"
+            android:layout_marginTop="15sp"
+            android:orientation="vertical"
+            android:weightSum="10">
+    </LinearLayout>
+
+    <ProgressBar
+            android:id="@+id/loadingscreen_progressbar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="197dp"
+            android:layout_height="65dp"
+            android:layout_below="@+id/loadingscreen_name"
+            android:layout_centerHorizontal="true"
+            android:max="100"
+            android:weightSum="5"/>
+
+    <TextView
+            android:id="@+id/loadingscreen_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/loadingscreen_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:text="Malmo 2 Night"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <TextView
+            android:id="@+id/loadingscreen_errortext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/linearLayout1"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text=""/>
+
+    <ImageView
+            android:id="@+id/loadingscreen_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="66dp"
+            android:antialias="true"
+            android:src="@drawable/ic_loadingscreen"/>
+
+    <ImageView
+            android:id="@+id/loadingscreen_sadsmiley"
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            android:layout_alignLeft="@+id/loadingscreen_logo"
+            android:layout_below="@+id/loadingscreen_progressbar"/>
+
+</RelativeLayout>

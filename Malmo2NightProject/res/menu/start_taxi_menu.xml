@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/action_taxi_random"
+            android:icon="@drawable/ic_random"
+            android:orderInCategory="100"
+            android:showAsAction="always"
+            android:title="Slumpmässa"/>
+
+</menu>

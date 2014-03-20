@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+             android:layout_gravity="center"
+             android:columnCount="1"
+             android:orientation="vertical">
+
+    <Button
+            android:id="@+id/systembolaget_hittanarmaste"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Visa vägen hit!"/>
+
+    <Button
+            android:id="@+id/systembolaget_button_oppettider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Visa öppettider på en webbläsare"/>
+
+</TableLayout>
