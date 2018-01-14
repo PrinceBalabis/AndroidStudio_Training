@@ -14,11 +14,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -27,6 +30,7 @@ import java.util.List;
 import java.util.UUID;
 
 import android.widget.SeekBar;
+import android.widget.Toast;
 
 /**
  * For a given BLE device, this Activity provides the user interface to connect, display data,
@@ -39,12 +43,12 @@ public class DeviceControlActivity extends Activity {
 
     public static final String EXTRAS_DEVICE_NAME = "DEVICE_NAME";
     public static final String EXTRAS_DEVICE_ADDRESS = "DEVICE_ADDRESS";
-    private int[] RGBFrame = {0,0,0};
-    private TextView isSerial;
+    private int RGBFrame;
     private TextView mConnectionState;
     private TextView mDataField;
-    private SeekBar mRed,mGreen,mBlue;
+    private SeekBar mRed;
     private String mDeviceName;
+    private Button button;
     private String mDeviceAddress;
     //  private ExpandableListView mGattServicesList;
     private BluetoothLeService mBluetoothLeService;
@@ -121,24 +125,21 @@ public class DeviceControlActivity extends Activity {
         mDeviceAddress = intent.getStringExtra(EXTRAS_DEVICE_ADDRESS);
 
         // Sets up UI references.
-        ((TextView) findViewById(R.id.device_address)).setText(mDeviceAddress);
         mConnectionState = (TextView) findViewById(R.id.connection_state);
-        // is serial present?
-        isSerial = (TextView) findViewById(R.id.isSerial);
 
         mDataField = (TextView) findViewById(R.id.data_value);
         mRed = (SeekBar) findViewById(R.id.seekRed);
-        mGreen = (SeekBar) findViewById(R.id.seekGreen);
-        mBlue = (SeekBar) findViewById(R.id.seekBlue);
+
 
         readSeek(mRed,0);
-        readSeek(mGreen,1);
-        readSeek(mBlue,2);
 
         getActionBar().setTitle(mDeviceName);
         getActionBar().setDisplayHomeAsUpEnabled(true);
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
+
+        addListenerOnButton();
+
     }
 
     @Override
@@ -227,8 +228,6 @@ public class DeviceControlActivity extends Activity {
             currentServiceData.put(
                     LIST_NAME, SampleGattAttributes.lookup(uuid, unknownServiceString));
 
-            // If the service exists for HM 10 Serial, say so.
-            if(SampleGattAttributes.lookup(uuid, unknownServiceString) == "HM 10 Serial") { isSerial.setText("Yes, serial :-)"); } else {  isSerial.setText("No, serial :-("); }
             currentServiceData.put(LIST_UUID, uuid);
             gattServiceData.add(currentServiceData);
 
@@ -253,7 +252,7 @@ public class DeviceControlActivity extends Activity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress,
                                           boolean fromUser) {
-                RGBFrame[pos]=progress;
+                RGBFrame=progress;
             }
 
             @Override
@@ -270,7 +269,7 @@ public class DeviceControlActivity extends Activity {
     }
     // on change of bars write char
     private void makeChange() {
-        String str = RGBFrame[0] + "," + RGBFrame[1] + "," + RGBFrame[2] + "\n";
+        String str = RGBFrame + "\n";
         Log.d(TAG, "Sending result=" + str);
         final byte[] tx = str.getBytes();
         if(mConnected) {
@@ -280,4 +279,32 @@ public class DeviceControlActivity extends Activity {
         }
     }
 
+    public void addListenerOnButton() {
+
+        button = (Button) findViewById(R.id.button_lock);
+
+        button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                Log.d("ManualPrinting","Lock Button Pressed");
+
+                String messageToBeSentTest = "hello world"; // Press-release Win key
+
+                final byte[] tx = messageToBeSentTest.getBytes();
+                if(mConnected) {
+                    characteristicTX.setValue(tx);
+                    mBluetoothLeService.writeCharacteristic(characteristicTX); // Send to SoftDeck Adapter
+                    mBluetoothLeService.setCharacteristicNotification(characteristicRX,true);
+                }
+
+//                //display in long period of time
+//                Toast.makeText(getApplicationContext(), "Lock Button pressed!",
+//                        Toast.LENGTH_LONG).show();
+            }
+
+        });
+
+    }
 }

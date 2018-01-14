@@ -79,6 +79,12 @@ public class DeviceScanActivity extends ListActivity {
             Log.w("BleActivity", "Location access not granted!");
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, MY_PERMISSION_RESPONSE);
         }
+
+
+
+
+
+
     }
 
     @Override
@@ -153,6 +159,7 @@ public class DeviceScanActivity extends ListActivity {
         if (device == null) return;
         final Intent intent = new Intent(this, DeviceControlActivity.class);
         intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, device.getName());
+        Log.d("CUSTOMDEBUG", device.getAddress());
         intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, device.getAddress());
         if (mScanning) {
             mBluetoothAdapter.stopLeScan(mLeScanCallback);

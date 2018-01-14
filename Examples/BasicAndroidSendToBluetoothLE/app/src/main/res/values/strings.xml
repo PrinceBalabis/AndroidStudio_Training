@@ -1,4 +1,5 @@
 <resources>
+    <!-- App-related -->
     <string name="app_name">BasicAndroidSendToBluetoothLE</string>
     <string name="ble_not_supported">BLE is not supported</string>
     <string name="label_data">Data:</string>
